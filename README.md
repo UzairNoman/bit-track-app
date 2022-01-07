@@ -1,6 +1,6 @@
 # BitTrackApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.5.
+This app is an angular project demontration of how addresses can be scraped and connected to their real owner revealing some important details
 
 ## Development server
 
