@@ -1,0 +1,30 @@
+<!-- ======= About Section ======= -->
+<section id="about" class="about">
+    <div class="container">
+
+      <div class="row">
+        <!-- <div class="col-lg-6 order-1 order-lg-2" data-aos="zoom-in" data-aos-delay="150">
+          <img src="assets/img/about.jpg" class="img-fluid" alt="">
+        </div> -->
+        <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content" data-aos="fade-right">
+          <h3>Reddit username: {{searchedObj?.reddit_user_name}}</h3>
+          <img [src]="searchedObj?.reddit_avatar" style="width:25%;" alt="Avatar" class="rounded-circle">
+          <div class="">
+            <h4>Twitter profile:</h4>
+              <a href="https://twitter.com/{{searchedObj?.twitter_username}}"><img [src]="searchedObj?.twitter_avatar" style="width:25%;" alt="Avatar" class="rounded-circle"></a>
+          </div>
+          <p class="fst-italic">
+            {{searchedObj?.twitter_description}}
+          </p>
+          <ul>
+            <li><i class="bi bi-check-circle"></i>Location: {{searchedObj?.twitter_location}}</li>
+            <li><i class="bi bi-check-circle"></i>Twitter name: {{searchedObj?.twitter_name}}</li>
+            <li><i class="bi bi-check-circle"></i>Twitter username: {{searchedObj?.twitter_username}}</li>
+            <li><i class="bi bi-check-circle"></i>ETH Balance: {{searchedObj?.balance}}</li>
+          </ul>
+          <a href="#" class="read-more" [routerLink]="['/home']">Search again<i class="bi bi-long-arrow-right"></i></a>
+        </div>
+      </div>
+
+    </div>
+  </section><!-- End About Section -->

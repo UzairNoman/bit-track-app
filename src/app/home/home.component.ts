@@ -1,7 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Papa } from 'ngx-papaparse';
 import * as _ from 'underscore';
+import { DataService } from '../data.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -9,25 +11,38 @@ import * as _ from 'underscore';
 })
 export class HomeComponent implements OnInit {
   public userArray = [];
-  constructor(public http: HttpClient,private papa: Papa) { }
+  public searchTerm;
+  public count = 0;
+  public total = 0;
+  constructor(public http: HttpClient,private papa: Papa, public router: Router,public dataService: DataService) { }
 
   ngOnInit(): void {
+    this.readFile(this.searchTerm);
+    var result = _.sortBy(this.userArray, "balance");
+
+  console.log(result)
   }
   search(event){
-    let addr = event.target.value
-    this.readFile();
+    console.log(this.searchTerm);
+    let searchedRow = _.find(this.userArray, function(item) {
+      return item["address"] == this.searchTerm; 
+    })
+    this.dataService.searchedSubj = searchedRow;
+    this.router.navigate(["search"]);
   }
-  readFile(){
-    this.http.get('assets/twitter_data_append.csv', {responseType: 'text'})
+  readFile(addr){
+    this.http.get('assets/final_info.csv', {responseType: 'text'})
     .subscribe(
         data => {
-          console.log('now: ', _.now());
           let csvObj = JSON.parse(this.CSVToJSON(data));
           csvObj.pop()
-          console.log(csvObj)
-          console.log(_.find(csvObj, function(item) {
-            return item["address"] == '0x5A02d339375b755Cd52823E199034e6921cBF33F'; 
-          }));
+          this.userArray = csvObj;
+        _.forEach(csvObj, (elem) =>{
+          this.total += 1
+          if(elem["twitter_username"] != ""){
+            this.count +=1
+          }
+        });
         },
         error => {
             console.log(error);
