@@ -36,8 +36,8 @@ export class HomeComponent implements OnInit {
           let csvObj = JSON.parse(this.CSVToJSON(data));
           csvObj.pop()
           this.userArray = csvObj;
-          this.sortByBal = _.sortBy(this.userArray,function(avatar) {
-            return -avatar.balance
+          this.sortByBal = _.sortBy(this.userArray,function(person) {
+            return -person.balance
           });
         console.log(this.sortByBal)
         _.forEach(csvObj, (elem) =>{
