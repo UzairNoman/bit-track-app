@@ -8,6 +8,11 @@ This app is an angular project demontration of how addresses can be scraped and 
 3) Clone the repo
 4) run `ng serve`
 
+We found that latest version of Angular CLI can cause issues. So if you had mistakenly installed the latest:
+1) Run `npm uninstall @angular-devkit/build-angular`
+2) Run `npm install @angular-devkit/build-angular@0.1100.7 --force`
+3) Then run `ng serve`
+
 
 ## Working configuration
 Angular CLI: 11.0.7
