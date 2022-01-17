@@ -23,7 +23,7 @@ export class HomeComponent implements OnInit {
   }
   search(event){
     console.log(this.searchTerm);
-    let searchedRow = _.find(this.userArray, function(item) {
+    let searchedRow = _.find(this.userArray, (item) => {
       return item["address"] == this.searchTerm; 
     })
     this.dataService.searchedSubj = searchedRow;
