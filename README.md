@@ -2,25 +2,34 @@
 
 This app is an angular project demontration of how addresses can be scraped and connected to their real owner revealing some important details
 
-## Development server
+## Setting up for the first time
+1) Make sure to install [Node](https://nodejs.org/en/download/)
+2) Install `npm install -g @angular/cli@11.0.7`
+3) Clone the repo
+4) run `ng serve`
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Working configuration
+Angular CLI: 11.0.7
+Node: 12.19.0
+OS: win32 x64
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Angular: 11.0.9
+... animations, common, compiler, compiler-cli, core, forms
+... localize, platform-browser, platform-browser-dynamic, router
+Ivy Workspace: Yes
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Package                         Version
+---------------------------------------------------------
+@angular-devkit/architect       0.1100.7
+@angular-devkit/build-angular   0.1100.7
+@angular-devkit/core            11.0.7
+@angular-devkit/schematics      11.0.7
+@angular/cli                    11.0.7
+@schematics/angular             11.0.7
+@schematics/update              0.1100.7
+rxjs                            6.6.7
+typescript                      4.0.8
 
 ## Further help
 
