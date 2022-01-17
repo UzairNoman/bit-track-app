@@ -20,9 +20,6 @@ Node: 12.19.0
 OS: win32 x64
 
 Angular: 11.0.9
-... animations, common, compiler, compiler-cli, core, forms
-... localize, platform-browser, platform-browser-dynamic, router
-Ivy Workspace: Yes
 
 Package                         Version
 ---------------------------------------------------------
