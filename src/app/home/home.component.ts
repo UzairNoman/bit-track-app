@@ -15,11 +15,18 @@ export class HomeComponent implements OnInit {
   public count = 0;
   public total = 0;
   sortByBal: any[];
+  matchedRecords: any = [];
+  random: any = [];
+  reveals: any = [];
   constructor(public http: HttpClient,private papa: Papa, public router: Router,public dataService: DataService) { }
 
   ngOnInit(): void {
     this.readFile(this.searchTerm);
     
+  }
+  tryThese(row){
+    this.dataService.searchedSubj = row;
+    this.router.navigate(["search"]);
   }
   search(event){
     console.log(this.searchTerm);
@@ -39,13 +46,18 @@ export class HomeComponent implements OnInit {
           this.sortByBal = _.sortBy(this.userArray,function(person) {
             return -person.balance
           });
-        console.log(this.sortByBal)
+        this.reveals = this.sortByBal.slice(0,6)
+        console.log(this.reveals)
+        
         _.forEach(csvObj, (elem) =>{
           this.total += 1
           if(elem["twitter_username"] != ""){
+            this.matchedRecords.push(elem)
             this.count +=1
           }
         });
+        console.log(this.matchedRecords)
+        this.random = this.matchedRecords.sort(() => .5 - Math.random()).slice(0,3);
         },
         error => {
             console.log(error);

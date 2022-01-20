@@ -9,3 +9,25 @@
     color: white;
     background-color: rgba(123, 39, 216, 0.8);
 }
+.random-addr{
+    color: white;
+    cursor: pointer;
+    &:hover{
+        color: rgb(161, 161, 161);
+    }
+}
+.reveal{
+    width: 48px;
+    height: 48px;
+}
+.eth{
+    width: 20px;
+    height: 20px;
+}
+.balance{
+    color: rgb(75, 90, 156);
+}
+.icon-box{
+    height: 315px;
+    width: 300px;
+}
