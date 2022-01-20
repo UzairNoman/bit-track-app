@@ -18,11 +18,12 @@ export class HomeComponent implements OnInit {
   matchedRecords: any = [];
   random: any = [];
   reveals: any = [];
+  parsedArr: any = [];
+  userTransaction: any = [];
   constructor(public http: HttpClient,private papa: Papa, public router: Router,public dataService: DataService) { }
 
   ngOnInit(): void {
-    this.readFile(this.searchTerm);
-    
+    this.readFile(this.searchTerm);  
   }
   tryThese(row){
     this.dataService.searchedSubj = row;
@@ -33,8 +34,7 @@ export class HomeComponent implements OnInit {
     let searchedRow = _.find(this.userArray, (item) => {
       return item["address"] == this.searchTerm; 
     })
-    this.dataService.searchedSubj = searchedRow;
-    this.router.navigate(["search"]);
+    this.tryThese(searchedRow)
   }
   readFile(addr){
     this.http.get('assets/final_info.csv', {responseType: 'text'})

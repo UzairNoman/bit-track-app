@@ -6,9 +6,9 @@
         <!-- <div class="col-lg-6 order-1 order-lg-2" data-aos="zoom-in" data-aos-delay="150">
           <img src="assets/img/about.jpg" class="img-fluid" alt="">
         </div> -->
-        <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content" data-aos="fade-right">
+        <div class="col-lg-8 pt-4 pt-lg-0 order-2 order-lg-1 content" data-aos="fade-right">
           <h3>Reddit username: {{searchedObj?.reddit_user_name}}</h3>
-          <img [src]="searchedObj?.reddit_avatar" style="width:25%;" alt="Avatar" class="rounded-circle">
+          <img *ngIf="searchedObj?.reddit_avatar != '-'" [src]="searchedObj?.reddit_avatar" style="width:25%;" alt="Avatar" class="rounded-circle">
           <div class="">
             <h4>Twitter profile:</h4>
               <a href="https://twitter.com/{{searchedObj?.twitter_username}}"><img [src]="searchedObj?.twitter_avatar" style="width:25%;" alt="Avatar" class="rounded-circle"></a>
@@ -24,6 +24,27 @@
           </ul>
           <a href="#" class="read-more" [routerLink]="['/home']">Search again<i class="bi bi-long-arrow-right"></i></a>
         </div>
+      </div>
+      <div *ngIf="userTransaction?.transactions && (userTransaction?.transactions.length != 0)" class="mt-5">
+        <h5>Transactions</h5>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>From</th>
+              <th>To</th>
+              <th>Transaction amount</th>
+              <th>Timestamp</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let transaction of userTransaction?.transactions">
+              <td>{{transaction.from}}</td>
+              <td>{{transaction.to}}</td>
+              <td>{{transaction.value * 1e-18 | number: '1.6-6' }}</td>
+              <td>{{transaction.timeStamp * 1000 | date:'short'}}</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
 
     </div>
