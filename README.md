@@ -1,4 +1,4 @@
-# BitTrackApp
+# ETH Explorer Web App
 
 This app is an angular project demontration of how addresses can be scraped and connected to their real owner revealing some important details
 
