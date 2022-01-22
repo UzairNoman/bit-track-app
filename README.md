@@ -1,6 +1,6 @@
 # ETH Explorer Web App
 
-This app is an angular project demontration of how addresses can be scraped and connected to their real owner revealing some important details
+This app is an Angular project demontration of how addresses can be scraped and connected to their real owner revealing some important details
 
 ## Setting up for the first time
 1) Make sure to install [Node](https://nodejs.org/en/download/)
@@ -21,6 +21,7 @@ OS: win32 x64
 
 Angular: 11.0.9
 
+```
 Package                         Version
 ---------------------------------------------------------
 @angular-devkit/architect       0.1100.7
@@ -32,6 +33,7 @@ Package                         Version
 @schematics/update              0.1100.7
 rxjs                            6.6.7
 typescript                      4.0.8
+```
 
 ## Further help
 
