@@ -5,8 +5,9 @@ This app is an Angular project demontration of how addresses can be scraped and 
 ## Setting up for the first time
 1) Make sure to install [Node](https://nodejs.org/en/download/)
 2) Install `npm install -g @angular/cli@11.0.7`
-3) Clone the repo
-4) run `ng serve`
+3) Clone the repo `git clone https://github.com/UzairNoman/bit-track-app.git`
+4) `cd bit-track-app`
+5) run `ng serve`
 
 We found that latest version of Angular CLI can cause issues. So if you had mistakenly installed the latest:
 1) Run `npm uninstall @angular-devkit/build-angular`
