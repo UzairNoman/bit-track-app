@@ -16,11 +16,10 @@ We found that latest version of Angular CLI can cause issues. So if you had mist
 
 
 ## Working configuration
-Angular CLI: 11.0.7
-Node: 12.19.0
-OS: win32 x64
-
-Angular: 11.0.9
+- Angular CLI: 11.0.7
+- Node: 12.19.0
+- OS: win32 x64
+- Angular: 11.0.9
 
 ```
 Package                         Version
